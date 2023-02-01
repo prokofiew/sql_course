@@ -1,0 +1,17 @@
+SELECT SUM(pages) FROM books;
+     
+     
+SELECT
+    author_lname, COUNT(*), SUM(pages)
+FROM 
+    books
+GROUP BY 
+    author_lname;
+
+SELECT 
+    CONCAT_WS(' ', author_lname, author_fname) AS author,
+    SUM(pages)
+FROM
+    books
+GROUP BY author
+ORDER BY author;

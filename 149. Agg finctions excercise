@@ -1,0 +1,22 @@
+SELECT 
+    CONCAT_WS(' ', author_lname, author_fname) AS author,
+    ROUND(AVG(released_year), 0) AS 'Avarage release year'
+FROM
+    books
+GROUP BY author;
+
+SELECT 
+    CONCAT_WS(' ', author_lname, author_fname) AS author, pages
+FROM
+    books
+WHERE
+    pages = (SELECT MAX(pages) FROM books);
+
+SELECT 
+    released_year AS year,
+    COUNT(title) AS '#books',
+    AVG(pages) AS 'avg pages'
+FROM
+    books
+GROUP BY year
+ORDER BY year;

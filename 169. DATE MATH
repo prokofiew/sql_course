@@ -1,0 +1,13 @@
+SELECT 
+	name,
+	birthdate, 
+	YEAR(birthdate + INTERVAL 21 YEAR) AS 'Will be 21'
+	FROM 
+		people
+
+SELECT 
+	name, 
+	birthdate, 
+	DATE_ADD(birthdate, INTERVAL 21 YEAR) 
+	FROM 
+		people;

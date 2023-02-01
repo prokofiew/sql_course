@@ -1,0 +1,9 @@
+ SELECT 
+    birthdate, 
+    DATE_FORMAT(birthdate,'Born on: %W %D %M %Y') 
+    FROM people;
+
+SELECT 
+    birthdate, 
+    DATE_FORMAT(birthdate,'%W %M') 
+    FROM people;
