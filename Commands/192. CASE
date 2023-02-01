@@ -1,0 +1,38 @@
+GENRE
+
+SELECT 
+    title,
+    released_year,
+    CASE
+        WHEN released_year >= 2000 THEN 'Modern Lit'
+        ELSE '20th Century Lit'
+    END AS GENRE
+FROM
+    books;
+
+
+STOCK level
+
+SELECT 
+    title, stock_quantity,
+CASE
+    WHEN stock_quantity BETWEEN 0 AND 50 THEN '*'
+    WHEN stock_quantity BETWEEN 51 AND 100 THEN '**'
+    WHEN stock_quantity BETWEEN 101 AND 200 THEN '***'
+    WHEN stock_quantity BETWEEN 201 AND 500 THEN '****'
+    ELSE '*****'
+END AS 'STOCK level'
+FROM books;
+
+lepsze jest to: bo case działa po kolei:
+SELECT 
+    title, stock_quantity,
+CASE
+    WHEN stock_quantity <= 50 THEN '*'
+    WHEN stock_quantity <= 51 AND 100 THEN '**'
+    WHEN stock_quantity <= 101 AND 200 THEN '***'
+    WHEN stock_quantity <= 201 AND 500 THEN '****'
+    ELSE '*****'
+END AS 'STOCK level'
+FROM books
+ORDER BY stock_quantity;

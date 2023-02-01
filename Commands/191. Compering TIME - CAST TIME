@@ -1,0 +1,32 @@
+CAST TIME
+
+SELECT 
+    *
+FROM
+    people
+WHERE
+    birthtime BETWEEN '12:00:00' AND '21:00:00';
+
+
+LEPIEJ TAK
+SELECT 
+    *
+FROM
+    people
+WHERE
+    birthtime 
+BETWEEN 
+    CAST('12:00:00' AS TIME) 
+AND     
+    CAST('21:00:00' AS TIME);
+
+
+MOŻNA TEŻ TAK:
+SELECT * 
+FROM 
+    people
+WHERE 
+    HOUR(birthtime)
+BETWEEN 
+    12 AND 21;
+

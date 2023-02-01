@@ -1,0 +1,31 @@
+SELECT 
+    title, released_year
+FROM
+    books
+WHERE
+    released_year >= 2000
+        AND released_year % 2 != 0;
+ 
+SELECT 
+    title, released_year
+FROM
+    books
+WHERE
+    released_year >= 2000
+        AND released_year % 2 != 1;
+ 
+SELECT 
+    title, released_year
+FROM
+    books
+WHERE
+    released_year >= 2000
+        AND released_year % 2 = 1;
+ 
+SELECT 
+    title, released_year
+FROM
+    books
+WHERE
+    released_year >= 2000
+        AND released_year % 2 = 0;

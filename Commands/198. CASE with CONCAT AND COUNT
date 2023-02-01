@@ -1,0 +1,18 @@
+CASE with CONCAT AND COUNT
+
+SELECT author_fname, author_lname,
+CASE
+	WHEN COUNT(*) = 1 THEN CONCAT_WS(' ',COUNT(*),'book')
+    ELSE CONCAT_WS(' ',COUNT(*),'books')
+END AS COUNT
+FROM books
+GROUP BY author_fname, author_lname;
+
+LUB 
+SELECT author_fname, author_lname,
+CASE
+	WHEN COUNT(*) = 1 THEN '1 book'
+    ELSE CONCAT_WS(' ',COUNT(*),'books')
+END AS COUNT
+FROM books
+GROUP BY author_fname, author_lname;

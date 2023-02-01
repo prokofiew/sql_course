@@ -1,0 +1,12 @@
+SELECT *
+FROM
+    people
+WHERE
+    birthdate < '2005-01-01';
+
+SELECT *
+FROM
+    people
+WHERE
+    YEAR(birthdate) < '2005';
+

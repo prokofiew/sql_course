@@ -1,0 +1,49 @@
+AND
+
+
+SELECT 
+    CONCAT_WS(' ', author_lname, author_fname) AS author,
+    title,
+    released_year
+FROM
+    books
+WHERE
+    author_lname LIKE 'Eggers'
+        AND released_year > 2010
+        AND title LIKE '%novel%';
+
+
+OR
+
+
+SELECT 
+    title, pages
+FROM
+    books
+WHERE
+    pages < 200 
+OR 
+    title LIKE '%stories%';
+
+
+BEETWEEN inclusive odpowiada porównaniu <= i >=
+
+SELECT 
+    title, released_year
+FROM
+    books
+WHERE
+    released_year BETWEEN 2004 AND 2015
+ORDER BY released_year;
+
+da inne wyniki niż:
+SELECT 
+    title, released_year
+FROM
+    books
+WHERE
+    released_year > 2004
+AND 
+    released_year < 2015
+ORDER BY 
+    released_year;
