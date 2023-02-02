@@ -1,0 +1,14 @@
+CREATE TABLE companies (
+    supplier_id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL UNIQUE,
+    address VARCHAR(250) NOT NULL,
+    CONSTRAINT name_address UNIQUE(name,address)
+    );
+
+
+CREATE TABLE houses (
+    purchase_price INT NOT NULL,
+    sale_price INT NOT NULL,
+    CONSTRAINT sale_income CHECK (sale_price >= purchase_price)
+    );

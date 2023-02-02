@@ -1,0 +1,14 @@
+ALTER TABLE companies
+    MODIFY name VARCHAR(200) DEFAULT 'unknown';
+
+
+ALTER TABLE companies
+    CHANGE c_name name VARCHAR(150) DEFAULT 'unknown'
+
+ALTER TABLE houses 
+    ADD CONSTRAINT positive_pprice 
+    CHECK (purchase_price >= 0);
+
+
+ALTER TABLE houses 
+    DROP CONSTRAINT positive_pprice;
