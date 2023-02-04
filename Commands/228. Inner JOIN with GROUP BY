@@ -1,0 +1,12 @@
+SELECT 
+    CONCAT_WS(' ',first_name, last_name) AS customer, 
+    (amount) AS 'total spent' 
+FROM customers
+JOIN
+    orders
+ON
+    orders.customer_id = customers.id
+GROUP BY 
+    first_name, last_name;
+ORDER BY 
+'total spent';
