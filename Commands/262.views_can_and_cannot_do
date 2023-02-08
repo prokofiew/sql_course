@@ -1,0 +1,7 @@
+Look at documentation:
+
+Can't DELETE or INSERT when:
+- using FUNCTIONS
+- using JOINS
+- using GROUP BY 
+and similar

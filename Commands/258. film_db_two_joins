@@ -1,0 +1,10 @@
+SELECT 
+	title, 
+	rating, 
+	CONCAT_WS(' ',first_name,last_name) AS reviewer 
+FROM 
+	series
+JOIN reviews
+ON series.id = reviews.series_id
+JOIN reviewers 
+ON reviewers.id = reviews.reviewer_id;
