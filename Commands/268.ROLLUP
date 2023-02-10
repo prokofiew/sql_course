@@ -1,0 +1,28 @@
+The GROUP BY clause permits a WITH ROLLUP modifier that causes summary output to include extra rows that represent higher-level (that is, super-aggregate) summary operations. ROLLUP thus enables you to answer questions at multiple levels of analysis with a single query. For example, ROLLUP can be used to provide support for OLAP (Online Analytical Processing) operations. 
+
+SELECT 
+	title, 
+	ROUND(AVG(rating),1),
+    COUNT(rating)
+FROM full_reviews 
+GROUP BY title WITH ROLLUP;
+
+    SELECT 
+        title, AVG(rating)
+    FROM
+        full_reviews
+    GROUP BY title WITH ROLLUP;
+     
+     
+    SELECT 
+        title, COUNT(rating)
+    FROM
+        full_reviews
+    GROUP BY title WITH ROLLUP;
+     
+     
+    SELECT 
+        first_name, released_year, genre, AVG(rating)
+    FROM
+        full_reviews
+    GROUP BY released_year , genre , first_name WITH ROLLUP;
