@@ -42,10 +42,10 @@ FROM
 
 SELECT 
     emp_no, 
-    department, s
-    alary, AVG(salary) OVER() 
-FROM e
-    mployees;
+    department, 
+    salary, AVG(salary) OVER() 
+FROM 
+    employees;
 
 
 SELECT 
@@ -65,3 +65,24 @@ SELECT
     MAX(salary) OVER(PARTITION BY department)  
 FROM 
     employees;
+
+
+SELECT 
+    emp_no, 
+    department, 
+    salary, 
+    AVG(salary) OVER(PARTITION BY department) AS AVG_by_depart
+    AVG(salary) OVER() AS company_AVG
+FROM 
+    employees;
+
+
+SELECT 
+    emp_no, 
+    department, 
+    salary, 
+    SUM(salary) OVER() AS total_pay, 
+    SUM(salary) OVER(PARTITION BY department) AS sum_by_depart 
+FROM 
+    employees;
+
